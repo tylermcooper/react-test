@@ -1,28 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+
+import ProductDetails from "./components/ProductDetails";
+import ProductSales from "./components/ProductSales";
+import Navigation from "./components/Navigation";
+import SalesGraph from "./components/SalesGraph";
+
+import { fetchProducts } from './actions/productActions';
+
+/* 
+ * mapDispatchToProps
+*/
+const mapDispatchToProps = dispatch => ({
+  fetchProducts: () => dispatch(fetchProducts())
+})
+
+/* 
+ * mapStateToProps
+*/
+const mapStateToProps = state => ({
+  ...state
+})
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
 
-export default App;
+  products = (event) => {
+    this.props.fetchProducts();
+  }
+
+ render() {
+  return (
+    <div class="stackline">
+      <aside class="details">
+        <ProductDetails />
+        <Navigation />
+ 
+      </aside>
+
+        {/* <SalesGraph /> */}
+
+        <ProductSales />
+
+
+    </div>
+  );
+ }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);

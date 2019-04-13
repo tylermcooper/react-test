@@ -6,9 +6,108 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightblue;
+  font-size: 16px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.stackline {
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-gap: 15px;
+  padding: 20px;  
+  height: 100%;
+}
+
+.details {
+  background: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  height: 100%;
+}
+
+.details h1 {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.details img {
+  width: 125px;
+  display: block;
+  margin: 0 auto;
+}
+
+.details p {
+  font-size: .6rem;
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+  color: grey;
+}
+
+.details__tags {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.details__tags li {
+  text-align: center;
+  font-size: .6rem;
+  min-width: 26%;
+  padding: 5px 6px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.details nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.details nav ul li {
+  margin-bottom: 10px;
+}
+
+.details nav ul li a {
+  text-decoration: none;
+  color: grey;
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+
+.sales {
+  background: #fff;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.sales table {
+  width: 100%;
+  font-size: .6rem; 
+  color: darkgrey;
+}
+
+.sales th {
+  color: grey;
+  text-transform: uppercase;
+}
+
+.sales tr {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+}
+
+.sales td, th {
+  min-width: 60px;
+  text-align: right;
 }
